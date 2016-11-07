@@ -77,8 +77,10 @@ abstract class Repository implements RepositoryInterface {
      * @param $id
      * @return mixed
      */
-    public function delete($id) {
-        return $this->model->delete($id);
+    public function deleted($id) {
+        $doomed = $this->model->find($id);
+        $doomed->delete();
+        return $doomed->delete();;
     }
  
     /**

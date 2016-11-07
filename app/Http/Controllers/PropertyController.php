@@ -44,7 +44,7 @@ class PropertyController extends Controller
    {
 	   	$rules = array(
 		   		"title" => "required|min:3",
-		        "address" => "required|min:10",
+		        "address" => "required",
 		        "town" => "required",
 		        "county"=>"required",
 		        "country"=>"required",
@@ -85,9 +85,9 @@ class PropertyController extends Controller
    public function deletor($id) 
    {
    		try{
-   			$this->property->delete($id);
+   			$this->property->deleted($id);
    			$message="toastr.success('Propiedad Eliminada con Exito','Éxito');";
-   			return redirect::back();
+   			return redirect::back()->with('message',$message);
    		}catch(Exception $e){
    			$message="toastr.error('No se pudo eliminar la propiedad','Error');";
    			return Redirect::back()->with('message',$message);

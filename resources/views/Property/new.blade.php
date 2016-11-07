@@ -13,6 +13,7 @@
 				<a href="{{action('PropertyController@index')}}" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>  Regresar</a>
 			</div>
 		</div>
+		<div class="col-md-12"> &nbsp;</div>
 		<form action="{{action('PropertyController@creator')}}" method="post">
 			{{ csrf_field() }}
 			<div class="col-md-6">

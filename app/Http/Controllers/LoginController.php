@@ -14,7 +14,7 @@ class LoginController extends Controller
 		$password = $request->input('password');
 		$remember = $request->input('remember');
 		if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-    		return Redirect::to('/dashboard');
+    		return Redirect::to('/Property');
 		}else{
 			return Redirect::to('/');
 		}
